@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tegaki</title>
+  <link rel="stylesheet" href="tegaki.css">
+  <script src="tegaki.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  function onTegakiDone() {
+    window.open(Tegaki.flatten().toDataURL('image/png'));
+  }
+  
+  Tegaki.open({
+    onDone: onTegakiDone,
+    width: 380,
+    height: 380
+  });
+</script>
+</body>
+</html>
