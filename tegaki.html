@@ -9,7 +9,12 @@
 <body>
 <script type="text/javascript">
   function onTegakiDone() {
-    window.open(Tegaki.flatten().toDataURL('image/png'));
+    var w = window.open('');
+    
+    Tegaki.flatten().toBlob(
+      function(b) { w.location = URL.createObjectURL(b); },
+      'image/png'
+    );
   }
   
   Tegaki.open({
